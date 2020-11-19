@@ -2,26 +2,24 @@
 class Kut < Formula
   desc "Run commands more easily"
   homepage "https://github.com/bettercallshao/kut"
-  version "0.5.0"
+  version "0.5.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/bettercallshao/kut/releases/download/v0.5.0/kut_0.5.0_darwin_amd64.zip"
-    sha256 "0747ab8399426be72beefba5cc86ebd144dcb6816ce5291ce371b118e8f8efb8"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/bettercallshao/kut/releases/download/v0.5.0/kut_0.5.0_linux_amd64.zip"
-      sha256 "6c09dd6224fe79404c07512e0722d822af2bd7991680a623a0a13ee7b74286f5"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/bettercallshao/kut/releases/download/v0.5.0/kut_0.5.0_linux_arm64.zip"
-        sha256 "ed592490b93a85d73bd3f4b68e7669f11eab4be8f99fa88c271f39ee1cc1bfb7"
-      else
-        url "https://github.com/bettercallshao/kut/releases/download/v0.5.0/kut_0.5.0_linux_armv6.zip"
-        sha256 "ff8227d801242ce95018be510e388068047a52a05a047b1166f68fa46447aabd"
-      end
-    end
+    url "https://github.com/bettercallshao/kut/releases/download/v0.5.1/kut_0.5.1_darwin_amd64.zip"
+    sha256 "87c37f4e316896d9fb71f88c69ab755aac45bbbed6fd4826e4d948c2439970b3"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/bettercallshao/kut/releases/download/v0.5.1/kut_0.5.1_linux_amd64.zip"
+    sha256 "42ae1e6e09abebfc37e815a4a1535cdf9373e6f86b58467b95541b13c5818079"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/bettercallshao/kut/releases/download/v0.5.1/kut_0.5.1_linux_armv6.zip"
+    sha256 "94c37978e75818e77acfdcb480485c8783cfb1d8f592f3de1c863c3c6b957ab0"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/bettercallshao/kut/releases/download/v0.5.1/kut_0.5.1_linux_arm64.zip"
+    sha256 "688ba1e529c6854ecd23f5d22bea2f3a820633d8fd2c30575192c72085ae325e"
   end
 
   def install
