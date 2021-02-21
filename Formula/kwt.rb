@@ -5,27 +5,27 @@
 class Kwt < Formula
   desc "Run commands easily"
   homepage "https://github.com/bettercallshao/kwt"
-  version "0.5.3"
+  version "0.5.5"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/bettercallshao/kut/releases/download/v0.5.3/kut_0.5.3_darwin_amd64.zip"
-    sha256 "50b2b59aac8ab68005c71bce70171665ba30b7739a143d981876333feb24714d"
+    url "https://github.com/bettercallshao/kwt/releases/download/v0.5.5/kwt_0.5.5_darwin_amd64.zip"
+    sha256 "155ae0af8825c7ccf61dc121a63bd8ebceb1246762eda7311474c7c6bba85b90"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/bettercallshao/kut/releases/download/v0.5.3/kut_0.5.3_linux_amd64.zip"
-    sha256 "31606093243377a556bd437972a3306ce7d072fb7c08929a7cc32cab3b71c6c2"
+    url "https://github.com/bettercallshao/kwt/releases/download/v0.5.5/kwt_0.5.5_linux_amd64.zip"
+    sha256 "c91bd5eb01a77a3f42ff3057fe8b3916a87c0229e32defa489e2454d2942d71e"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/bettercallshao/kut/releases/download/v0.5.3/kut_0.5.3_linux_armv6.zip"
-    sha256 "d26f0806b5b8f1c9067ef14b75e148147f8657358d1c2fea200f56834c607504"
+    url "https://github.com/bettercallshao/kwt/releases/download/v0.5.5/kwt_0.5.5_linux_armv6.zip"
+    sha256 "71d4ca5246ffb261eaf67ba932b81205a79a3c9d6babb154db3da78b71031abf"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/bettercallshao/kut/releases/download/v0.5.3/kut_0.5.3_linux_arm64.zip"
-    sha256 "d1bc223387a0007f91782ac63827e317d9531b95772ab642229f35a1fcba03c9"
+    url "https://github.com/bettercallshao/kwt/releases/download/v0.5.5/kwt_0.5.5_linux_arm64.zip"
+    sha256 "225d5a03053453e993f9ec6185b8bc3622ba19d823ab8564b159d7130c253a3d"
   end
 
   def install
-    bin.install "kut"
+    bin.install "kwt"
   end
 end
