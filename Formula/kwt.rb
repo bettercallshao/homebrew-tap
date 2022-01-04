@@ -5,33 +5,47 @@
 class Kwt < Formula
   desc "Run commands easily"
   homepage "https://github.com/bettercallshao/kwt"
-  version "0.6.0"
-  bottle :unneeded
+  version "0.6.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bettercallshao/kwt/releases/download/v0.6.0/kwt_0.6.0_darwin_amd64.zip"
-      sha256 "e14ef22e7e65d2e652e8b47f8eaa3faf5b82f9315dc26f282e5c33360515bf55"
+      url "https://github.com/bettercallshao/kwt/releases/download/v0.6.1/kwt_0.6.1_darwin_amd64.zip"
+      sha256 "5e51657f2fba6412abd469e19392511e4cbdaeb0d1ff5e5d9fca2e2bac83b75c"
+
+      def install
+        bin.install "kwt"
+        bin.install "kwtd"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bettercallshao/kwt/releases/download/v0.6.0/kwt_0.6.0_linux_amd64.zip"
-      sha256 "2af35d6c969803cbf2556b8538c7c94be4529af6586ce2cb13fdb680629ae9d8"
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/bettercallshao/kwt/releases/download/v0.6.0/kwt_0.6.0_linux_armv6.zip"
-      sha256 "e8ac273e0bed4b0a198271e59c9cdea2d3c35c440e34e5288f1ca058c5958dba"
+      url "https://github.com/bettercallshao/kwt/releases/download/v0.6.1/kwt_0.6.1_linux_armv6.zip"
+      sha256 "ae07252f4e8a9ee88e99d69dcd13a36e20a4b5605533dc00cd9f6389d419e749"
+
+      def install
+        bin.install "kwt"
+        bin.install "kwtd"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bettercallshao/kwt/releases/download/v0.6.0/kwt_0.6.0_linux_arm64.zip"
-      sha256 "b9a83a21bac951e22d7ce6e0d24b95b322dc190e90dbc464ef97e4313120f9bb"
-    end
-  end
+      url "https://github.com/bettercallshao/kwt/releases/download/v0.6.1/kwt_0.6.1_linux_arm64.zip"
+      sha256 "b0ccfed627b52cbec805c4604cee57ef03a578350b10c3e4eae02d483691f706"
 
-  def install
-    bin.install "kwt"
-    bin.install "kwtd"
+      def install
+        bin.install "kwt"
+        bin.install "kwtd"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/bettercallshao/kwt/releases/download/v0.6.1/kwt_0.6.1_linux_amd64.zip"
+      sha256 "d623e05a3f51594a5f6b55ae9286e910d39ea739f00cb7c032921948a2a8a862"
+
+      def install
+        bin.install "kwt"
+        bin.install "kwtd"
+      end
+    end
   end
 end
